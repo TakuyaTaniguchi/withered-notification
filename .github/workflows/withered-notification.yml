@@ -1,0 +1,16 @@
+name: Notify on macOS
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+jobs:
+  notify:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run notification script
+      run: |
+        osascript -e 'display notification "コミットしましょう！" with title "今日は草が生えていません！"'
