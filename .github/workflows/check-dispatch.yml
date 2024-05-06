@@ -1,0 +1,21 @@
+name: Check Github Ref
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'デプロイするブランチを選択してください'
+        required: true
+        default: 'main'
+
+jobs:
+  check-ref:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.branch }}
+
+      - name: Print GitHub Ref
+        run: echo "GitHub Ref: ${{ github.ref }}"
