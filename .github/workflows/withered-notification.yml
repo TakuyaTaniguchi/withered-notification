@@ -21,4 +21,4 @@ jobs:
     - name: Run notification script
       run: |
         osascript -e 'display notification "コミットしましょう！" with title "今日は草が生えていません！"'
-        echo "GitHub Ref: ${{ github.ref }}"
+        echo "GitHub Ref: ${{ github.ref }}____${{ github.event.inputs.branch }}"
