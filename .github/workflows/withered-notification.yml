@@ -3,7 +3,7 @@ name: Notify on macOS
 on:
   schedule:
     - cron: "0 8 * * *"
-  # ブランチを指定して任意実行できるようにする
+  # ブランチ を指定して任意実行できるようにする
   workflow_dispatch:
     
 
