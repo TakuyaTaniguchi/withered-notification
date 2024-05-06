@@ -3,9 +3,12 @@ name: Notify on macOS
 on:
   schedule:
     - cron: "0 8 * * *"
-  # ブランチを指定して任意実行できるようにする
   workflow_dispatch:
-    
+    inputs:
+      branch:
+        description: 'ブランチを指定してください'
+        required: true
+        default: 'main'  # デフォルトはmainブランチ
 
 jobs:
   notify:
