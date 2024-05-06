@@ -3,6 +3,10 @@ name: Notify on macOS
 on:
   schedule:
     - cron: "0 8 * * *"
+  # ブランチを指定して任意実行できるようにする
+  workflow_dispatch:
+    
+
 jobs:
   notify:
     runs-on: macos-latest
